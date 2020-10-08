@@ -1,0 +1,41 @@
+﻿@using CarDiaryServer.Models
+@using Microsoft.AspNetCore.Identity
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@inject SignInManager<CarDiaryServer.Models.Entities.StoreUser> SignInManager
+
+@{ this.ViewData["Title"] = "Home Page";
+    this.ViewData["PageId"] = "HomeBack"; }
+
+@if (!this.SignInManager.IsSignedIn(this.User))
+{
+    <div class="col-lg-8">
+        <h3>
+            Keep the service history of your car and keep track of the time and kilometers of the car repairs.
+
+            <hr />
+
+            <small class="text-muted">
+                Completely free and safe.
+            </small>
+        </h3>
+    </div>
+
+    <div class="float-right">
+        <partial name="_LoginPartial" />
+    </div>
+
+}
+else
+{
+    <div class="col-lg-8">
+        <h3>
+           here he add cars
+        </h3>
+    </div>
+}
+
+
+

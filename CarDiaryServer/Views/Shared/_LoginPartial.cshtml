@@ -1,0 +1,31 @@
+﻿@using CarDiaryServer.Models.Entities
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<StoreUser> SignInManager
+@inject UserManager<StoreUser> UserManager
+
+
+@if (!this.SignInManager.IsSignedIn(this.User))
+{
+    <ul class="navbar-nav col-lg-8">
+        <li class="nav-item">
+            <h4>
+                Still dont have an account?
+                Create one!
+            </h4>
+            <a class="btn btn-dark" asp-area="Identity" asp-controller="Account" asp-action="Register">Register</a>
+            <hr />
+        </li>
+
+
+        <li class="nav-item">
+            <h4>
+                Already have an account?
+            </h4>
+            <a class="btn btn-dark" asp-controller="Account" asp-action="Login">Login</a>
+
+            <hr />
+        </li>
+
+    </ul>
+}
+

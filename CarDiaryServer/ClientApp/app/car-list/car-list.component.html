@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="list-group">
+            <ul >
+                <li class="list-group-item waves-light" mdbWavesEffect  *ngFor="let car of cars"> {{ car.Make }} {{ car.type }} {{ car.year }} </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="jumbotron">
+            <div class="tabs-content">
+                <div class="content active" id="tabv1">
+                    <p>This is the first tab of the vertical tab example.</p>
+                </div>
+                <div class="content" id="tabv2">
+                    <p>This is the second tab of the vertical tab example. </p>
+                </div>
+                <div class="content" id="tabv3">
+                    <p>This is the third tab of the vertical tab example.</p>
+                </div>
+                <div class="content" id="tabv4">
+                    <p>This is the fourth tab of the vertical tab example.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
