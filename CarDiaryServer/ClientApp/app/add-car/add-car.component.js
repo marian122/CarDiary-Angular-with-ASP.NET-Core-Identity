@@ -6,28 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.DataService = void 0;
+exports.AddCarComponent = void 0;
 var core_1 = require("@angular/core");
-var operators_1 = require("rxjs/operators");
-var DataService = /** @class */ (function () {
-    function DataService(http) {
-        this.http = http;
-        this.token = "";
-        this.cars = [];
+var AddCarComponent = /** @class */ (function () {
+    function AddCarComponent() {
     }
-    DataService.prototype.loadProducts = function () {
-        var _this = this;
-        return this.http.get("https://localhost:44393/api/Cars")
-            .pipe(operators_1.map(function (data) {
-            _this.cars = data;
-            return true;
-        }));
+    AddCarComponent.prototype.ngOnInit = function () {
     };
-    DataService = __decorate([
-        core_1.Injectable({
-            providedIn: 'root'
+    AddCarComponent = __decorate([
+        core_1.Component({
+            selector: 'app-add-car',
+            templateUrl: 'add-car.component.html',
+            styles: []
         })
-    ], DataService);
-    return DataService;
+    ], AddCarComponent);
+    return AddCarComponent;
 }());
-exports.DataService = DataService;
+exports.AddCarComponent = AddCarComponent;

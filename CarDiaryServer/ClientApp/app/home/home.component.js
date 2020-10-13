@@ -9,9 +9,11 @@ exports.__esModule = true;
 exports.HomeComponent = void 0;
 var core_1 = require("@angular/core");
 var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+    function HomeComponent(router) {
+        this.router = router;
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    HomeComponent.prototype.addCar = function () {
+        this.router.navigate(["add-car"]);
     };
     HomeComponent = __decorate([
         core_1.Component({

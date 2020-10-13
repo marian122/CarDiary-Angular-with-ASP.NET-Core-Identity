@@ -11,15 +11,21 @@ var platform_browser_1 = require("@angular/platform-browser");
 var core_1 = require("@angular/core");
 var app_component_1 = require("./app.component");
 var router_1 = require("@angular/router");
+var home_component_1 = require("./home/home.component");
 var car_list_component_1 = require("./car-list/car-list.component");
 var dataService_1 = require("./shared/dataService");
 var http_1 = require("@angular/common/http");
 var core_2 = require("@angular/core");
 var angular_bootstrap_md_1 = require("angular-bootstrap-md");
-var animations_1 = require("@angular/platform-browser/animations"); // If You need animations
-//const routes: Routes = [
-//  {path: '', component: HomeComponent}
-//];
+var animations_1 = require("@angular/platform-browser/animations");
+var add_car_component_1 = require("./add-car/add-car.component");
+var login_component_1 = require("./login/login.component"); // If You need animations
+var routes = [
+    { path: '', component: home_component_1.HomeComponent },
+    { path: 'cars', component: car_list_component_1.CarListComponent },
+    { path: 'add-car', component: add_car_component_1.AddCarComponent },
+    { path: 'login', component: login_component_1.LoginComponent }
+];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -27,13 +33,20 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                car_list_component_1.CarListComponent
+                car_list_component_1.CarListComponent,
+                home_component_1.HomeComponent,
+                add_car_component_1.AddCarComponent,
+                login_component_1.LoginComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
                 http_1.HttpClientModule,
                 angular_bootstrap_md_1.MDBBootstrapModule.forRoot(),
-                animations_1.BrowserAnimationsModule
+                animations_1.BrowserAnimationsModule,
+                router_1.RouterModule.forRoot(routes, {
+                    useHash: true,
+                    enableTracing: false
+                })
             ],
             exports: [router_1.RouterModule],
             providers: [dataService_1.DataService],

@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 let DataService = class DataService {
     constructor(http) {
         this.http = http;
+        this.token = "";
         this.cars = [];
     }
     loadProducts() {

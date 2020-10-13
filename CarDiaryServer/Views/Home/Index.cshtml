@@ -1,13 +1,10 @@
-﻿@using CarDiaryServer.Models
-@using Microsoft.AspNetCore.Identity
+﻿@using Microsoft.AspNetCore.Identity
 @{
     ViewData["Title"] = "Home Page";
 }
 
 @inject SignInManager<CarDiaryServer.Models.Entities.StoreUser> SignInManager
 
-@{ this.ViewData["Title"] = "Home Page";
-    this.ViewData["PageId"] = "HomeBack"; }
 
 @if (!this.SignInManager.IsSignedIn(this.User))
 {
@@ -30,11 +27,7 @@
 }
 else
 {
-    <div class="col-lg-8">
-        <h3>
-           here he add cars
-        </h3>
-    </div>
+    <car-app></car-app>
 }
 
 

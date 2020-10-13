@@ -14,9 +14,9 @@
         <nav class="navbar navbar-expand-md h-auto py-md-1">
             <div class="navbar-collapse w-100 dual-collapse2">
                 <ul class="navbar-nav ml-auto text-center">
-                    <li class="nav-item active">
+                    @*<li class="nav-item active">
                         <a class="btn btn-dark mr-2" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                    </li>
+                    </li>*@
                     @if (this.SignInManager.IsSignedIn(this.User))
                     {
                         <li class="nav-item">
